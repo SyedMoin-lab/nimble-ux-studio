@@ -1,8 +1,7 @@
-
 import { ModeToggle } from "@/components/mode-toggle";
 import { Footer } from "@/components/ui/footer";
 import { Hexagon, Github, Twitter } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -27,12 +26,12 @@ const AboutUs = () => {
           
           <div className="flex items-center gap-x-4 sm:gap-x-8">
             <div className="flex gap-x-4 sm:gap-x-8">
-              <a href="/about-us" className="text-sm font-semibold text-primary">
+              <Link to="/about-us" className="text-sm font-semibold text-primary">
                 About Us
-              </a>
-              <a href="/our-product" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
+              </Link>
+              <Link to="/our-product" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
                 Our Product
-              </a>
+              </Link>
             </div>
             <ModeToggle />
           </div>
@@ -115,7 +114,7 @@ const AboutUs = () => {
           { href: "/terms", label: "Terms of Service" },
         ]}
         copyright={{
-          text: "© 2024 InnovateLab",
+          text: "© 202 InnovateLab",
           license: "All rights reserved",
         }}
       />

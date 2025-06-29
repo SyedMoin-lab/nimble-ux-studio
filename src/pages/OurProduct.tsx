@@ -1,8 +1,7 @@
-
 import { ModeToggle } from "@/components/mode-toggle";
 import { Footer } from "@/components/ui/footer";
 import { Hexagon, Github, Twitter, Zap, Shield, Users, BarChart } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const OurProduct = () => {
   const navigate = useNavigate();
@@ -27,12 +26,12 @@ const OurProduct = () => {
           
           <div className="flex items-center gap-x-4 sm:gap-x-8">
             <div className="flex gap-x-4 sm:gap-x-8">
-              <a href="/about-us" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
+              <Link to="/about-us" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
                 About Us
-              </a>
-              <a href="/our-product" className="text-sm font-semibold text-primary">
+              </Link>
+              <Link to="/our-product" className="text-sm font-semibold text-primary">
                 Our Product
-              </a>
+              </Link>
             </div>
             <ModeToggle />
           </div>

@@ -1,9 +1,9 @@
-
 import { HeroSection } from "@/components/hero-section";
 import { FileUploadSection } from "@/components/file-upload-section";
 import { FooterSection } from "@/components/footer-section";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Hexagon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const scrollToTop = () => {
@@ -30,25 +30,20 @@ const Index = () => {
           
           <div className="flex items-center gap-x-4 sm:gap-x-8">
             <div className="flex gap-x-4 sm:gap-x-8">
-              <a href="/about-us" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
+              <Link to="/about-us" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
                 About Us
-              </a>
-              <a href="/our-product" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
+              </Link>
+              <Link to="/our-product" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
                 Our Product
-              </a>
+              </Link>
             </div>
             <ModeToggle />
           </div>
         </nav>
       </header>
       
-      {/* Hero Section */}
       <HeroSection />
-      
-      {/* File Upload Section */}
       <FileUploadSection />
-      
-      {/* Footer */}
       <FooterSection />
     </div>
   );
