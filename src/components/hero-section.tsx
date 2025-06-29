@@ -1,6 +1,6 @@
 
-import { HeroLanding } from "@/components/ui/hero-1";
-import type { HeroLandingProps } from "@/components/ui/hero-1";
+import { HeroLanding } from "@/components/hero";
+import type { HeroLandingProps } from "@/components/hero";
 import { Hexagon } from "lucide-react";
 
 export const HeroSection = () => {
