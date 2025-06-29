@@ -8,29 +8,13 @@ import { Hexagon, Github, Twitter } from "lucide-react";
 
 const Index = () => {
   const heroProps: HeroLandingProps = {
-    logo: {
-      src: "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=violet&shade=500",
-      alt: "InnovateLab Logo",
-      companyName: "InnovateLab"
-    },
-    
-    navigation: [
-      { name: 'Solutions', href: '/solutions' },
-      { name: 'Features', href: '/features' },
-      { name: 'Pricing', href: '/pricing' },
-      { name: 'Resources', href: '/resources' },
-      { name: 'About', href: '/about' },
-    ],
-    loginText: "Sign In",
-    loginHref: "/login",
-    
     title: "Transform Your Ideas into Reality with AI-Powered Innovation",
     description: "Harness the power of artificial intelligence to streamline your workflow, boost productivity, and unlock new possibilities for your business.",
     
     announcementBanner: {
       text: "🚀 New AI Features Released!",
       linkText: "Explore AI Assistant",
-      linkHref: "/features/ai-assistant"
+      linkHref: "/our-product"
     },
     
     callToActions: [
@@ -41,7 +25,7 @@ const Index = () => {
       },
       { 
         text: "Watch Demo", 
-        href: "/demo", 
+        href: "/our-product", 
         variant: "secondary" 
       }
     ],
@@ -87,10 +71,8 @@ const Index = () => {
           },
         ]}
         mainLinks={[
-          { href: "/solutions", label: "Solutions" },
-          { href: "/features", label: "Features" },
-          { href: "/pricing", label: "Pricing" },
-          { href: "/about", label: "About" },
+          { href: "/about-us", label: "About Us" },
+          { href: "/our-product", label: "Our Product" },
           { href: "/contact", label: "Contact" },
         ]}
         legalLinks={[
