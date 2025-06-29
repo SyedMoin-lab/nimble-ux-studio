@@ -1,57 +1,102 @@
 
 import { ModeToggle } from "@/components/mode-toggle";
 import { Footer } from "@/components/ui/footer";
-import { Hexagon, Github, Twitter } from "lucide-react";
+import { Hexagon, Github, Twitter, Zap, Shield, Users, BarChart } from "lucide-react";
 
 const OurProduct = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Theme toggle in top right */}
-      <div className="fixed top-4 right-4 z-50">
-        <ModeToggle />
-      </div>
-      
-      {/* Header */}
-      <header className="border-b border-border">
+      {/* Sticky Header */}
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <nav className="flex items-center justify-between p-4 sm:p-6 lg:px-8">
           <div className="flex items-center gap-x-2">
             <Hexagon className="h-8 w-8 text-primary" />
             <span className="font-bold text-xl">InnovateLab</span>
           </div>
-          <div className="flex gap-x-8">
-            <a href="/" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
-              Home
-            </a>
-            <a href="/about-us" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
-              About Us
-            </a>
-            <a href="/our-product" className="text-sm font-semibold text-primary">
-              Our Product
-            </a>
+          
+          <div className="flex items-center gap-x-8">
+            <div className="flex gap-x-8">
+              <a href="/" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
+                Home
+              </a>
+              <a href="/about-us" className="text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors">
+                About Us
+              </a>
+              <a href="/our-product" className="text-sm font-semibold text-primary">
+                Our Product
+              </a>
+            </div>
+            <ModeToggle />
           </div>
         </nav>
       </header>
 
       {/* Content */}
       <div className="px-6 py-16">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-foreground mb-8">Our Product</h1>
-          <div className="prose prose-lg max-w-none text-muted-foreground">
-            <p className="mb-6">
-              Our AI-powered innovation platform is designed to revolutionize how businesses approach their daily workflows and creative processes.
+        <div className="max-w-6xl mx-auto space-y-16">
+          {/* Hero Section */}
+          <div className="text-center animate-fade-in">
+            <h1 className="text-4xl font-bold text-foreground mb-8">Our AI-Powered Platform</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Transform your business with our comprehensive suite of AI tools designed to streamline workflows, enhance productivity, and drive innovation across your organization.
             </p>
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">Key Features</h2>
-              <ul className="space-y-3">
-                <li>• Advanced AI-powered automation tools</li>
-                <li>• Intelligent workflow optimization</li>
-                <li>• Real-time collaboration features</li>
-                <li>• Comprehensive analytics and insights</li>
-              </ul>
+          </div>
+
+          {/* Product Overview */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <img 
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop" 
+                alt="AI Platform Dashboard" 
+                className="rounded-lg shadow-2xl w-full h-auto"
+              />
             </div>
-            <p>
-              Experience the future of productivity with our comprehensive suite of AI tools designed to amplify your team's capabilities.
-            </p>
+            <div className="animate-fade-in">
+              <h2 className="text-3xl font-semibold text-foreground mb-6">Revolutionary AI Platform</h2>
+              <p className="text-muted-foreground mb-6">
+                Our platform combines machine learning, natural language processing, and advanced analytics to provide you with tools that adapt to your business needs and grow with your success.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Zap className="h-5 w-5 text-primary" />
+                  <span>Lightning-fast processing and real-time insights</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Shield className="h-5 w-5 text-primary" />
+                  <span>Enterprise-grade security and compliance</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Users className="h-5 w-5 text-primary" />
+                  <span>Seamless team collaboration features</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <BarChart className="h-5 w-5 text-primary" />
+                  <span>Advanced analytics and reporting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Grid */}
+          <div className="animate-fade-in">
+            <h2 className="text-3xl font-semibold text-foreground mb-12 text-center">Key Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="p-6 bg-card rounded-lg border border-border hover:shadow-lg transition-shadow">
+                <Zap className="h-8 w-8 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-3">AI-Powered Automation</h3>
+                <p className="text-muted-foreground">Automate repetitive tasks and workflows with intelligent AI agents that learn from your patterns.</p>
+              </div>
+              <div className="p-6 bg-card rounded-lg border border-border hover:shadow-lg transition-shadow">
+                <BarChart className="h-8 w-8 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-3">Smart Analytics</h3>
+                <p className="text-muted-foreground">Get actionable insights from your data with our advanced machine learning algorithms.</p>
+              </div>
+              <div className="p-6 bg-card rounded-lg border border-border hover:shadow-lg transition-shadow">
+                <Users className="h-8 w-8 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-3">Team Collaboration</h3>
+                <p className="text-muted-foreground">Work together seamlessly with real-time collaboration tools and shared workspaces.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
