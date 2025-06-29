@@ -1,3 +1,4 @@
+
 'use client'
 
 import { useState } from 'react'
@@ -108,7 +109,7 @@ export function HeroLanding(props: HeroLandingProps) {
         <a
           key={index}
           href={cta.href}
-          className="rounded-lg bg-primary px-3 py-2 sm:px-3.5 sm:py-2.5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring transition-colors"
+          className="w-full sm:w-auto rounded-lg bg-primary px-4 py-3 sm:px-3.5 sm:py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring transition-colors text-center"
         >
           {cta.text}
         </a>
@@ -118,7 +119,7 @@ export function HeroLanding(props: HeroLandingProps) {
         <a
           key={index}
           href={cta.href}
-          className="text-xs sm:text-sm/6 font-semibold text-foreground hover:text-muted-foreground transition-colors"
+          className="w-full sm:w-auto text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors text-center"
         >
           {cta.text} <span aria-hidden="true">→</span>
         </a>
@@ -127,27 +128,27 @@ export function HeroLanding(props: HeroLandingProps) {
   }
 
   return (
-    <div className={`min-h-screen w-screen overflow-x-hidden relative ${className || ''}`}>
-      {/* Simplified gradient background */}
+    <div className={`min-h-[85vh] sm:min-h-screen w-full relative overflow-hidden ${className || ''}`}>
+      {/* Simplified gradient background - visible in both light and dark mode */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 min-h-screen"
+        className="absolute inset-x-0 -top-20 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-40"
       >
         <div
           style={{
             clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
             background: `linear-gradient(to top right, ${gradientColors?.from}, ${gradientColors?.to})`
           }}
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] min-h-screen"
+          className="relative left-[calc(50%-8rem)] aspect-[1155/678] w-[24rem] sm:w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] opacity-40 sm:left-[calc(50%-11rem)] sm:opacity-30 md:left-[calc(50%-30rem)] md:w-[72.1875rem]"
         />
       </div>
 
-      <div className="relative isolate px-6 pt-20 overflow-hidden min-h-screen flex flex-col justify-center">        
-        <div className="mx-auto max-w-4xl">
+      <div className="relative isolate px-4 sm:px-6 pt-16 sm:pt-20 flex flex-col justify-center min-h-[85vh] sm:min-h-screen">        
+        <div className="mx-auto max-w-4xl text-center">
           {/* Announcement banner */}
           {announcementBanner && (
-            <div className="hidden sm:mb-8 sm:flex sm:justify-center animate-fade-in">
-              <div className="relative rounded-full px-2 py-1 text-xs sm:px-3 sm:text-sm/6 text-muted-foreground ring-1 ring-border hover:ring-ring transition-all">
+            <div className="mb-6 sm:mb-8 flex justify-center">
+              <div className="relative rounded-full px-3 py-2 text-xs sm:text-sm text-muted-foreground ring-1 ring-border hover:ring-ring transition-all">
                 {announcementBanner.text}{' '}
                 <a href={announcementBanner.linkHref} className="font-semibold text-primary hover:text-primary/80 transition-colors">
                   <span aria-hidden="true" className="absolute inset-0" />
@@ -157,17 +158,17 @@ export function HeroLanding(props: HeroLandingProps) {
             </div>
           )}
           
-          <div className="text-center">
-            <h1 className={`${getTitleSizeClasses()} font-semibold tracking-tight text-balance text-foreground animate-fade-in`}>
+          <div>
+            <h1 className={`${getTitleSizeClasses()} font-semibold tracking-tight text-balance text-foreground mb-4 sm:mb-6`}>
               {title}
             </h1>
-            <p className="mt-6 sm:mt-8 text-base sm:text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8 animate-fade-in">
+            <p className="text-base sm:text-lg md:text-xl text-pretty text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto">
               {description}
             </p>
             
             {/* Call to action buttons */}
             {callToActions && callToActions.length > 0 && (
-              <div className="mt-8 sm:mt-10 flex items-center justify-center gap-x-4 sm:gap-x-6 animate-fade-in">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                 {callToActions.map((cta, index) => renderCallToAction(cta, index))}
               </div>
             )}
